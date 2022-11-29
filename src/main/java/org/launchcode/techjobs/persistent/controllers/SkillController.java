@@ -50,6 +50,8 @@ public class SkillController {
         if (optSkill.isPresent()) {
             Skill skill = (Skill) optSkill.get();
             model.addAttribute("skill", skill);
+            model.addAttribute("title", "${'Skill: ' + skill.name}");
+
             return "skills/view";
         } else {
             return "redirect:../";
